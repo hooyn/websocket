@@ -33,7 +33,7 @@ public class WebSocketChat {
     public void onMessage(String msg, Session session) throws Exception {
         log.info("Receive Message: " + msg);
         for (Session client : clients) {
-            session.getBasicRemote().sendText(msg);
+            client.getBasicRemote().sendText(msg);
         }
     }
 
